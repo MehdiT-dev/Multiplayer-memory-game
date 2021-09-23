@@ -1,0 +1,39 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Memory Game
+  link(rel='stylesheet', href='/css/styles.css')
+include includes/header.pug
+main
+  - var user = {isAnonymous: true, nickname: '', avatar: ''}
+  #user 
+    if user.isAnonymous
+      h2 Veuillez créer un profil afin d'accéder aux différentes fonctionnalités!
+      p Pour commencer, saisissez votre pseudo de joueur et sélectionnez un avatar :
+      form
+        div
+          label(for="nickname") Votre pseudo
+          input(type="text" name="nickname" value="")
+        div#avatar-selection
+          img#avatar-img(src="/img/avatar-01.png", alt="")
+          div
+            span#previous 
+            input#avatar-id(disabled)
+            span#next
+        button(type="submit") Valider
+    else if !user.isAnonymous
+      h2 Bienvenue #{user.nickname}
+      h3 Créer une nouvelle partie 
+      p ou 
+      h3 Rejoidre une partie existante
+include includes/footer.pug
+script(src='/js/index.js')
+script.
+  // let ws = new WebSocket('ws://localhost:8080');
+  // ws.onmessage = message => {
+  //     // message.data (string message send by the server)
+  //     const response = JSON.parse(message.data);
+  //     console.log(response);
+  // }

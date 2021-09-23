@@ -1,0 +1,77 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat';
+}
+
+main {
+    height: calc(100vh - 100px);
+    margin: 0 auto;
+    text-align: center;
+    width: 1400px;
+
+    h2, p {
+        margin: 20px 0;
+    }
+}
+
+form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    div {
+        flex-basis: 50%;
+
+        label {
+            display: block;
+        }
+    }
+
+    button {
+        width: 200px;
+    }
+}
+
+#avatar-selection {
+
+    img {
+        height: 150px;
+        width: auto;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+
+        span {
+            background-color: red;
+            border: 1px solid #1b1b1b;
+            cursor: pointer;
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+
+            &#previous {
+                background-color: #fff;
+            }
+
+            &#next {
+                background-color: blue;
+            }
+        }
+
+        input {
+            text-align: center;
+            width: 100px;
+        }
+    }
+}
+
+@import 'header/header';
+@import 'footer/footer';
+@import 'game/game';
