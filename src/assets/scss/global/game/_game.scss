@@ -1,0 +1,20 @@
+#partie {
+    margin: 0 auto;
+    width: 1200px;
+}
+#partie h2 {
+    text-align: center;
+}
+#score {
+    display: flex;
+    justify-content: space-between;
+}
+#player1 {
+    text-decoration: underline lightskyblue 5px;
+}
+#player2 {
+    text-decoration: underline lightcoral 5px;
+}
+#score span {
+    margin: 0 20px;
+}

@@ -72,6 +72,14 @@ form {
     }
 }
 
+.btn {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #1e2a61;
+    border-radius: 10px;
+}
+
 @import 'header/header';
 @import 'footer/footer';
 @import 'game/game';

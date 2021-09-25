@@ -1,0 +1,51 @@
+table {
+    box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.5);;
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 1200px;
+    
+    thead {
+        background-color: #1b1b1b;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 0;
+        
+        th {
+            margin: 0;
+            padding: 25px;
+            text-align: center;
+        }
+    }
+    
+    tbody {
+        background-color: #fff;
+        color: #1b1b1b;
+        margin: 0;
+        
+        td {
+            padding: 20px;
+            text-align: center;
+            
+            &.join-link a {
+                background-color: #1b1b1b;
+                border-radius: 10px;
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 20px;
+                font-weight: bold;
+            }
+
+            &.join-link.game-open a {
+                background-color: green;
+            }
+            
+            &.join-link.game-close a {
+                background-color: red;
+            }
+        }
+    }
+
+    tr {
+        border-top: 1px solid #1b1b1b;
+    }
+}
