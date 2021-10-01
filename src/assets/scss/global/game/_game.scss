@@ -18,3 +18,47 @@
 #score span {
     margin: 0 20px;
 }
+#grid {
+    display: grid;
+    grid-template: repeat(3,340px) / repeat(6,220px);
+    width: 1200px;
+    height: 1000px;
+    margin: 75px auto;
+}
+.card {
+    background-color: transparent;
+    perspective: 1000px;
+    margin: 5px;
+}
+.sides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .6s;
+    transform-style: preserve-3d;
+}
+.sides.active {
+    transform: rotateY(180deg);
+}
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.front {
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.front img {
+    width: 100%;
+}
+.back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

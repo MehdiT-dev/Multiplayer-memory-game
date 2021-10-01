@@ -9,13 +9,17 @@ body {
 }
 
 main {
-    height: calc(100vh - 100px);
     margin: 0 auto;
+    min-height: calc(100vh - 150px);
     text-align: center;
     width: 1400px;
 
-    h2, p {
+    h1, h2, h3, p {
         margin: 20px 0;
+    }
+
+    h3 {
+        text-transform: uppercase;
     }
 }
 
@@ -29,43 +33,52 @@ form {
 
         label {
             display: block;
+            margin: 0 20px;
         }
     }
 
     button {
+        background-color: #1b1b1b;
+        border-radius: 10px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1em;
+        margin: 20px;
+        padding: 10px 20px;
         width: 200px;
     }
 }
 
 #avatar-selection {
+    align-items: center;
+    display: flex;
+    justify-content: center;
 
     img {
         height: 150px;
-        width: auto;
+        width: 150px;
     }
 
-    div {
-        display: flex;
-        justify-content: center;
+    span {
+        background-color: red;
+        border: 1px solid #1b1b1b;
+        cursor: pointer;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
 
-        span {
-            background-color: red;
-            border: 1px solid #1b1b1b;
-            cursor: pointer;
-            display: inline-block;
-            height: 20px;
-            width: 20px;
-
-            &#previous {
-                background-color: #fff;
-            }
-
-            &#next {
-                background-color: blue;
-            }
+        &#previous {
+            background-color: #fff;
         }
 
-        input {
+        &#next {
+            background-color: blue;
+        }
+    }
+
+    input {
+        &#avatar-id {
+            display: none;
             text-align: center;
             width: 100px;
         }
@@ -80,6 +93,34 @@ form {
     border-radius: 10px;
 }
 
+.separation {
+    font-weight: bold;
+    position: relative;
+
+    &::before,
+    &::after {
+        background-color: #1b1b1b;
+        content: '';
+        height: 3px;
+        position: absolute;
+        width: 200px;
+    }
+
+    &::before {
+        left: 0;
+        top: 50%;
+        transform: translate(-220px, -50%);
+    }
+
+    &::after {
+        right: 0;
+        top: 50%;
+        transform: translate(220px, -50%);
+    }
+}
+
 @import 'header/header';
 @import 'footer/footer';
 @import 'game/game';
+@import 'gameTab/gameTab';
+@import 'gameForm/gameForm';

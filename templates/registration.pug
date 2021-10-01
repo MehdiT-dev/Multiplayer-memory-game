@@ -1,0 +1,35 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Memory Game
+  link(rel='stylesheet', href='/css/styles.css')
+include includes/header.pug
+main
+  - var user = {isAnonymous: true, nickname: '', avatar: ''}
+  #user 
+    if user.isAnonymous
+      h2 Veuillez créer un profil afin d'accéder aux différentes fonctionnalités!
+      p Pour commencer, saisissez votre pseudo de joueur et sélectionnez un avatar :
+      form#connection-button(method='post', action='/')
+        div
+          label(for="nickname") Votre pseudo
+          input(type="text" name="nickname" value="")
+        div
+          label(for="avatar") Votre avatar
+          div#avatar-selection
+            span#previous 
+            img#avatar-img(src="/img/avatar-01.png", alt="")
+            span#next
+            input#avatar-id(type="text" name="avatar" value="")
+        button(type="submit") Valider
+    else if !user.isAnonymous
+      h2 Bienvenue #{user.nickname}
+      h3 Créer une nouvelle partie 
+      p ou 
+      h3 Rejoidre une partie existante
+include includes/footer.pug
+script(src="../socket.io/socket.io.js") 
+script(src='/js/index.js')
+script(src='js/socket.io.js')

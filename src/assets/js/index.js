@@ -1,14 +1,4 @@
-// Change localhost by hostName
-// Anything that server send should be JSON 
-let ws = new WebSocket('ws://localhost:8080');
-ws.onmessage = message => {
-    // message.data (string message send by the server)
-    const response = JSON.parse(message.data);
-    console.log(response);
-}
-
 // Gestion des avatars lors de la création du profil
-
 let avatarTab = [
     'avatar-01',
     'avatar-02',

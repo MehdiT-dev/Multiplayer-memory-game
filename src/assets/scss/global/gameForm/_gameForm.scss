@@ -1,0 +1,32 @@
+#connection-button {
+
+    div {
+
+        label {
+            margin: 20px;
+        }
+
+        input {
+            height: 40px;
+            font-size: 1.2em;
+        }
+    }
+}
+
+#gameForm {
+
+    > label {
+        margin-bottom: 20px;
+    }
+
+    > input {
+        height: 40px;
+        font-size: 1.2em;
+    }
+
+    div {
+        button {
+            width: 500px;
+        }
+    }
+}

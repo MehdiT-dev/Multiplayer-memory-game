@@ -7,33 +7,40 @@ head
   link(rel='stylesheet', href='/css/styles.css')
 include includes/header.pug
 main
+  h2 Bienvenue #{nickname}
+  h3 Créer une nouvelle partie
+  form#gameForm(action='' method="post")
+    label(for='gameName') Nom de la partie
+    input(type='text', name='', value='')
+    p Nombre de cartes
+    div
+      label(for='') 18
+        input(type='radio', name='nbCards', value='', checked)
+    p Temps par tour
+    div
+      label(for='') 10
+        input(type='radio', name='timer', value='')
+      label(for='') 15
+        input(type='radio', name='timer', value='', checked)
+      label(for='') 20
+        input(type='radio', name='timer', value='')
+    p Style des cartes (face avant)
+    div
+      label(for='') Classique
+        input(type='radio', name='frontCard', value='', checked)
+    p Style des cartes (face arri&egrave;re)
+    div
+      label(for='') Bleu
+        input(type='radio', name='backCard', value='', checked)
+      label(for='') rouge
+        input(type='radio', name='backCard', value='')
+    button(type='submit') Cr&eacute;er la partie
+  p
+    span.separation ou
+  h3 Rejoidre une partie existante
+  include includes/gameTab.pug
   - var user = {isAnonymous: true, nickname: '', avatar: ''}
-  #user 
-    if user.isAnonymous
-      h2 Veuillez créer un profil afin d'accéder aux différentes fonctionnalités!
-      p Pour commencer, saisissez votre pseudo de joueur et sélectionnez un avatar :
-      form
-        div
-          label(for="nickname") Votre pseudo
-          input(type="text" name="nickname" value="")
-        div#avatar-selection
-          img#avatar-img(src="/img/avatar-01.png", alt="")
-          div
-            span#previous 
-            input#avatar-id(disabled)
-            span#next
-        button(type="submit") Valider
-    else if !user.isAnonymous
-      h2 Bienvenue #{user.nickname}
-      h3 Créer une nouvelle partie 
-      p ou 
-      h3 Rejoidre une partie existante
 include includes/footer.pug
-script(src='/js/index.js')
-script.
-  // let ws = new WebSocket('ws://localhost:8080');
-  // ws.onmessage = message => {
-  //     // message.data (string message send by the server)
-  //     const response = JSON.parse(message.data);
-  //     console.log(response);
-  // }
+script(src="../socket.io/socket.io.js") 
+script(src='js/index.js') 
+script(src='js/socket.io.js')
